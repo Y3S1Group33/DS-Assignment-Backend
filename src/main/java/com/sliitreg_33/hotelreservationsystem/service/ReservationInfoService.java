@@ -16,7 +16,7 @@ public interface ReservationInfoService {
     ReservationInfo getReservationInfoById(int id);
 
     //update reservation info
-
+    ReservationInfo updateReservationInfo(ReservationInfo reservationInfo, Integer id);
 
     //delete reservation info
     void deleteReservationInfo(int id);

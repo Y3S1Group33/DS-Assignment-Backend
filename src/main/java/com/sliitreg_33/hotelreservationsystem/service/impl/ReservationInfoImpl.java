@@ -34,7 +34,24 @@ public class ReservationInfoImpl implements ReservationInfoService {
     }
 
     @Override
+    public ReservationInfo updateReservationInfo(ReservationInfo reservationInfo, Integer id) {
+
+        ReservationInfo existingReservationInfo = reservationInfoRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Not found"));
+
+        existingReservationInfo.setRoomType(reservationInfo.getRoomType());
+        existingReservationInfo.setDescription(reservationInfo.getDescription());
+        existingReservationInfo.setAvailableRooms(reservationInfo.getAvailableRooms());
+        existingReservationInfo.setPrice(reservationInfo.getPrice());
+
+        reservationInfoRepository.save(existingReservationInfo);
+
+        return existingReservationInfo;
+    }
+
+    @Override
     public void deleteReservationInfo(int id) {
+
         reservationInfoRepository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Not Found"));
 
