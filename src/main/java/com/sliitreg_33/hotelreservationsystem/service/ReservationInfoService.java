@@ -10,7 +10,7 @@ public interface ReservationInfoService {
     ReservationInfo addReservationInfo(ReservationInfo reservationInfo);
 
     //get all reservation info
-    List<ReservationInfo> getAllReservation();
+    List<ReservationInfo> getAllReservationInfo();
 
     //get reservation info by id
     ReservationInfo getReservationInfoById(int id);
