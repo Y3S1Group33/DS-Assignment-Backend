@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -32,4 +33,12 @@ public class Hotel {
 
     @Column(name = "hotel_telephone")
     private String hotelTelephone;
+
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "hf_key", referencedColumnName = "hotel_id")
+//    private List<ReservationInfo> reservationInfo;
+
+    @OneToMany(targetEntity = ReservationInfo.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "hf_key",referencedColumnName = "hotel_id")
+    private List<ReservationInfo> reservationInfos;
 }

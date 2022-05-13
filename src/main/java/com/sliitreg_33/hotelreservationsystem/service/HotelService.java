@@ -1,6 +1,7 @@
 package com.sliitreg_33.hotelreservationsystem.service;
 
 import com.sliitreg_33.hotelreservationsystem.model.Hotel;
+import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface HotelService {
 
     //delete hotel information
     void deleteHotelInfo(Integer id);
+
+//    List<ReservationInfo> getAllHotelReservationInfo();
 }

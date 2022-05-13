@@ -2,7 +2,9 @@ package com.sliitreg_33.hotelreservationsystem.service.impl;
 
 import com.sliitreg_33.hotelreservationsystem.exception.ResourceNotFoundException;
 import com.sliitreg_33.hotelreservationsystem.model.Hotel;
+import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
 import com.sliitreg_33.hotelreservationsystem.repository.HotelRepository;
+import com.sliitreg_33.hotelreservationsystem.repository.ReservationInfoRepository;
 import com.sliitreg_33.hotelreservationsystem.service.HotelService;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ import java.util.List;
 public class HotelServiceImpl implements HotelService {
 
     private HotelRepository hotelRepository;
+    private ReservationInfoRepository reservationInfoRepository;
 
     public HotelServiceImpl(HotelRepository hotelRepository){
         this.hotelRepository = hotelRepository;
@@ -57,4 +60,10 @@ public class HotelServiceImpl implements HotelService {
         hotelRepository.deleteById(id);
 
     }
+
+//    @Override
+//    public List<ReservationInfo> getAllHotelReservationInfo() {
+//        return reservationInfoRepository.findAll();
+//    }
+
 }

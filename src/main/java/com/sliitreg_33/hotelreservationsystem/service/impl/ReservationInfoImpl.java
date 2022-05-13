@@ -1,17 +1,25 @@
 package com.sliitreg_33.hotelreservationsystem.service.impl;
 
+import com.sliitreg_33.hotelreservationsystem.DTO.ReservationInfoDTO;
 import com.sliitreg_33.hotelreservationsystem.exception.ResourceNotFoundException;
+import com.sliitreg_33.hotelreservationsystem.model.Hotel;
 import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
+import com.sliitreg_33.hotelreservationsystem.repository.HotelRepository;
 import com.sliitreg_33.hotelreservationsystem.repository.ReservationInfoRepository;
 import com.sliitreg_33.hotelreservationsystem.service.ReservationInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
 @Service
 public class ReservationInfoImpl implements ReservationInfoService {
 
+    @Autowired
     ReservationInfoRepository reservationInfoRepository;
+    @Autowired
+    HotelRepository hotelRepository;
 
     public ReservationInfoImpl(ReservationInfoRepository reservationInfoRepository){
         this.reservationInfoRepository = reservationInfoRepository;
@@ -57,5 +65,15 @@ public class ReservationInfoImpl implements ReservationInfoService {
 
         reservationInfoRepository.deleteById(id);
 
+    }
+
+    @Override
+    public Hotel addHotel(ReservationInfoDTO reservationInfoDTO) {
+        return hotelRepository.save(reservationInfoDTO.getHotel());
+    }
+
+    @Override
+    public List<Hotel> getAllHotelReservationInfo() {
+        return hotelRepository.findAll();
     }
 }
