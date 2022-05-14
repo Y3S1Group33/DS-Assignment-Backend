@@ -30,11 +30,11 @@ public class PaymentController {
         return new ResponseEntity<Payment>(_paymentService.createPayment(payment), HttpStatus.CREATED);
     }
     @PutMapping
-    public ResponseEntity<Payment> updateHotelInfo(@RequestParam(name="id") int id,@RequestBody Payment payment){
+    public ResponseEntity<Payment> updatePaymentInfo(@RequestParam(name="id") int id,@RequestBody Payment payment){
         return new ResponseEntity<Payment>(_paymentService.updatePaymentRecord(payment,id), HttpStatus.OK);
     }
     @DeleteMapping()
-    public ResponseEntity<String> deleteHotelInfo(@RequestParam(name="id") int id){
+    public ResponseEntity<String> deletePaymentInfo(@RequestParam(name="id") int id){
         _paymentService.deletePaymentRecord(id);
         return new ResponseEntity<>("deleted the record with id: "+id, HttpStatus.OK);
     }
