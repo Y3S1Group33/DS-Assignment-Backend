@@ -15,6 +15,9 @@ public interface ReservationsService {
     //get reservations by id
     Reservations getReservationsById(int id);
 
+    //get reservations by userId
+    Reservations getReservationsByUserId(String id);
+
     //update reservations
     Reservations updateReservations(Reservations reservations, int id);
 

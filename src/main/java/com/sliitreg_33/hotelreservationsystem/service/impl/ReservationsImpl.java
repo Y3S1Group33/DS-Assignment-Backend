@@ -33,6 +33,11 @@ public class ReservationsImpl implements ReservationsService {
     }
 
     @Override
+    public Reservations getReservationsByUserId(String id) {
+        return null;
+    }
+
+    @Override
     public Reservations updateReservations(Reservations reservations, int id) {
         Reservations updateReservation = _reservationsRepository.findById(id).orElseThrow(
                 ()-> new ResourceNotFoundException("Record not found"));
