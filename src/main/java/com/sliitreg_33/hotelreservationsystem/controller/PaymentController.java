@@ -4,13 +4,13 @@ import com.sliitreg_33.hotelreservationsystem.service.PaymentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/payments")
-public class PaymentController {
+@CrossOrigin(origins = "*")
 
+public class PaymentController {
     private PaymentService _paymentService;
 
     public PaymentController(PaymentService paymentService){

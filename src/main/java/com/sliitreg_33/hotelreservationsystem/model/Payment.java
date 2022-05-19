@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Base64;
+
+
 
 @Data
 @AllArgsConstructor
@@ -22,10 +25,10 @@ public class Payment {
     private String cardHolderName;
 
     @Column(name = "creditCardNumber")
-    private long creditCardNumber;
+    private String creditCardNumber;
 
     @Column(name = "cvc")
-    private int cvc;
+    private String cvc;
     @Column(name = "expDate")
     private String expDate;
     public int getId() {
@@ -44,27 +47,31 @@ public class Payment {
         this.cardHolderName = cardHolderName;
     }
 
-    public long getCreditCardNumber() {
+    public String getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(long creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
+    public void setCreditCardNumber(String creditCardNumber) {
+        String encodedCreditCardNumber = Base64.getEncoder().encodeToString(creditCardNumber.getBytes());
+        this.creditCardNumber = encodedCreditCardNumber;
     }
 
-    public int getCvc() {
+    public String getCvc() {
         return cvc;
     }
 
-    public void setCvc(int cvc) {
-        this.cvc = cvc;
+    public void setCvc(String cvc) {
+        String encodedCVC = Base64.getEncoder().encodeToString(cvc.getBytes());
+        this.cvc = encodedCVC;
     }
 
     public String getExpDate() {
+
         return expDate;
     }
 
     public void setExpDate(String expDate) {
+
         this.expDate = expDate;
     }
 
