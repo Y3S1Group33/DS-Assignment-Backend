@@ -17,7 +17,7 @@ public class Taxi {
     @Column(name = "taxi_resrvation_id")
     private int id;
 
-    @Column(name = "taxi_name")
+    @Column(name = "taxi_id")
     private String taxiId;
 
     @Column(name = "driver_name")
@@ -30,7 +30,7 @@ public class Taxi {
     private String reservationId;
 
     @Column(name = "contact_number")
-    private int contactNumber;
+    private String contactNumber;
 
     public int getId() {
         return id;
@@ -38,6 +38,14 @@ public class Taxi {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTaxiId() {
+        return taxiId;
+    }
+
+    public void setTaxiId(String taxiId) {
+        this.taxiId = taxiId;
     }
 
     public String getDriverName() {
@@ -64,11 +72,11 @@ public class Taxi {
         this.reservationId = reservationId;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 }
