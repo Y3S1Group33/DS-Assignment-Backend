@@ -44,6 +44,8 @@ public class ReservationsImpl implements ReservationsService {
         updateReservation.setPrice(reservations.getPrice());
         updateReservation.setDate(reservations.getDate());
 
+        _reservationsRepository.save(updateReservation);
+
         return updateReservation;
     }
 
