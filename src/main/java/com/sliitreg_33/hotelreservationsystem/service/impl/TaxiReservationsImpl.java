@@ -1,6 +1,7 @@
 package com.sliitreg_33.hotelreservationsystem.service.impl;
 
 import com.sliitreg_33.hotelreservationsystem.model.Taxi;
+import com.sliitreg_33.hotelreservationsystem.repository.TaxiRepository;
 import com.sliitreg_33.hotelreservationsystem.service.TaxiService;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,10 @@ import java.util.List;
 @Service
 public class TaxiReservationsImpl implements TaxiService {
 
+    private TaxiRepository _taxiRepository;
+    public TaxiReservationsImpl(TaxiRepository taxiRepository) {
+        _taxiRepository = taxiRepository;
+    }
 
     @Override
     public Taxi addTaxiReservation(Taxi taxi) {
