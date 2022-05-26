@@ -1,6 +1,6 @@
 package com.sliitreg_33.hotelreservationsystem.service;
 
-import com.sliitreg_33.hotelreservationsystem.DTO.ReservationInfoDTO;
+
 import com.sliitreg_33.hotelreservationsystem.model.Hotel;
 import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,9 +24,9 @@ public interface ReservationInfoService {
     //delete reservation info
     void deleteReservationInfo(int id);
 
-    Hotel addHotel(ReservationInfoDTO reservationInfoDTO);
+//    Hotel addHotel(ReservationInfoDTO reservationInfoDTO);
 
-    List<Hotel> getAllHotelReservationInfo();
+//    List<Hotel> getAllHotelReservationInfo();
 
     }
 

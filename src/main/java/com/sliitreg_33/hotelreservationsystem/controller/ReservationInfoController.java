@@ -1,9 +1,7 @@
 package com.sliitreg_33.hotelreservationsystem.controller;
 
-import com.sliitreg_33.hotelreservationsystem.DTO.ReservationInfoDTO;
-import com.sliitreg_33.hotelreservationsystem.model.Hotel;
+
 import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
-import com.sliitreg_33.hotelreservationsystem.repository.HotelRepository;
 import com.sliitreg_33.hotelreservationsystem.service.HotelService;
 import com.sliitreg_33.hotelreservationsystem.service.ReservationInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/reservationInfo")
 public class ReservationInfoController {
@@ -60,13 +59,13 @@ public class ReservationInfoController {
         return new ResponseEntity<>("Reservation Information deleted successfully", HttpStatus.OK);
     }
 
-    @PostMapping("/find")
-    public ResponseEntity<Hotel> addHotel(@RequestBody ReservationInfoDTO reservationInfoDTO){
-        return new ResponseEntity<Hotel>(reservationInfoService.addHotel(reservationInfoDTO), HttpStatus.CREATED);
-    }
+//    @PostMapping("/find")
+//    public ResponseEntity<Hotel> addHotel(@RequestBody ReservationInfoDTO reservationInfoDTO){
+//        return new ResponseEntity<Hotel>(reservationInfoService.addHotel(reservationInfoDTO), HttpStatus.CREATED);
+//    }
 
-    @GetMapping("/find")
-    public List<Hotel> getAllHotelReservationInfo(){
-        return reservationInfoService.getAllHotelReservationInfo();
-    }
+//    @GetMapping("/find")
+//    public List<Hotel> getAllHotelReservationInfo(){
+//        return reservationInfoService.getAllHotelReservationInfo();
+//    }
 }

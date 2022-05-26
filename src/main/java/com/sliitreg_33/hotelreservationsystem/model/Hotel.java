@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,23 +21,13 @@ public class Hotel {
     @Column(name = "hotel_name")
     private String hotelName;
 
-    @Column(name = "hotel_type")
-    private String hotelType;
-
     @Column(name = "hotel_description")
-    private String hotelDescription;
+    private String description;
 
     @Column(name = "hotel_address")
-    private String hotelAddress;
+    private String address;
 
     @Column(name = "hotel_telephone")
-    private String hotelTelephone;
+    private String telephone;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "hf_key", referencedColumnName = "hotel_id")
-//    private List<ReservationInfo> reservationInfo;
-
-    @OneToMany(targetEntity = ReservationInfo.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "hf_key",referencedColumnName = "hotel_id")
-    private List<ReservationInfo> reservationInfos;
 }

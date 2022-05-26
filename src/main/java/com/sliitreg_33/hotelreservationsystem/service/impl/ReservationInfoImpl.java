@@ -1,6 +1,6 @@
 package com.sliitreg_33.hotelreservationsystem.service.impl;
 
-import com.sliitreg_33.hotelreservationsystem.DTO.ReservationInfoDTO;
+
 import com.sliitreg_33.hotelreservationsystem.exception.ResourceNotFoundException;
 import com.sliitreg_33.hotelreservationsystem.model.Hotel;
 import com.sliitreg_33.hotelreservationsystem.model.ReservationInfo;
@@ -67,13 +67,13 @@ public class ReservationInfoImpl implements ReservationInfoService {
 
     }
 
-    @Override
-    public Hotel addHotel(ReservationInfoDTO reservationInfoDTO) {
-        return hotelRepository.save(reservationInfoDTO.getHotel());
-    }
-
-    @Override
-    public List<Hotel> getAllHotelReservationInfo() {
-        return hotelRepository.findAll();
-    }
+//    @Override
+//    public Hotel addHotel(ReservationInfoDTO reservationInfoDTO) {
+//        return hotelRepository.save(reservationInfoDTO.getHotel());
+//    }
+//
+//    @Override
+//    public List<Hotel> getAllHotelReservationInfo() {
+//        return hotelRepository.findAll();
+//    }
 }
